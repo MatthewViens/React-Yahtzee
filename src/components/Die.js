@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Die.css';
+import { rolld6 } from '../helpers';
 
 class Die extends React.Component {j
   constructor(props) {
@@ -23,18 +24,21 @@ class Die extends React.Component {j
       'fas fa-dice-six'
     ];
     return (
-      <div className={
+      <button className={
         this.props.locked
           ? "die locked"
           : "die"
+        }
+        disabled={
+          !this.props.rollsLeft > 0
         }>
         <i className={
           this.props.value
             ? icons[this.props.value]
-            : icons[Math.floor(Math.random() * 6 + 1)]
+            : icons[rolld6()]
           }
           onClick={this.handleClick}></i>
-      </div>
+      </button>
     )
   }
 }

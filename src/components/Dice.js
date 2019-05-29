@@ -23,12 +23,14 @@ class Dice extends React.Component {
             <Die 
               value={die.value} 
               locked={die.locked}
+              rollsLeft={this.props.rollsLeft}
               toggleDieLock={this.props.toggleDieLock}
               index={i}
               key={i}
           />))}
         </div>
         <button
+          disabled={!this.props.rollsLeft > 0}
           onClick={this.handleClick}
         > {this.props.rollsLeft} Rolls Left
         </button>

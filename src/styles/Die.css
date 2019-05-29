@@ -1,3 +1,8 @@
+.die {
+  background-color: #fff;
+  border: 0;
+}
+
 .die i {
   font-size: 4.5rem;
 }
