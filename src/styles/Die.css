@@ -1,0 +1,7 @@
+.die i {
+  font-size: 4.5rem;
+}
+
+.die.locked {
+  color: red;
+}

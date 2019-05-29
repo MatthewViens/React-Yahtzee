@@ -1,0 +1,12 @@
+.game {
+  max-width: 600px;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.game h1 {
+  margin: 10px 0;
+  font-size: 4rem;
+  text-align: center;
+  padding: 10px 130px;
+}

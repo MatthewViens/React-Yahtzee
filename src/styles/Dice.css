@@ -1,0 +1,6 @@
+.dice__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1rem 4rem;
+}
