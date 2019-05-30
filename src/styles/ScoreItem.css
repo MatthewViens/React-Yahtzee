@@ -2,4 +2,31 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  border: none;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+  padding: 6px;
+  border-bottom: 1px solid #000;
+}
+
+.score-item:hover {
+  background-color: #f2fdff;
+}
+
+.score-item:disabled {
+  color: #000;
+  background-color: #f7f7f7;
+}
+
+.score-item:disabled:hover {
+  background-color: none;
+}
+
+.score-item:disabled .score-item--name {
+  text-decoration: line-through;
+}
+
+.score-item p {
+  margin: 0;
 }

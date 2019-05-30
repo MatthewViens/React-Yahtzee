@@ -63,24 +63,22 @@ scoringFunctions['Full House'] = (dice) => {
 }
 
 scoringFunctions['Small Straight'] = (dice) => {
-  let occurances = 0;
+  let occurances = 1;
   let sortedDice = [...dice].sort((a, b) => a.value - b.value);
   for(let i = 0; i < dice.length - 1; i++) {
     if(sortedDice[i + 1].value === sortedDice[i].value + 1) {
-      occurances += 2;
-      i += 1;
+      occurances += 1;
     }
   }
   return occurances >= 4 ? 30 : 0;
 }
 
 scoringFunctions['Large Straight'] = (dice) => {
-  let occurances = 0;
+  let occurances = 1;
   let sortedDice = [...dice].sort((a, b) => a.value - b.value);
   for(let i = 0; i < dice.length - 1; i++) {
     if(sortedDice[i + 1].value === sortedDice[i].value + 1) {
-      occurances += 2;
-      i += 1;
+      occurances += 1;
     }
   }
   return occurances >= 5 ? 40 : 0;

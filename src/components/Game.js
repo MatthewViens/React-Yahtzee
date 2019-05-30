@@ -20,9 +20,9 @@ class Game extends React.Component {
         {name: 'Sixes', score: null, description: 'Sum of all Sixes'},
         {name: '3 of a kind', score: null, description: 'Sum of all dice if 3 are the same'},
         {name: '4 of a kind', score: null, description: 'Sum of all dice if 4 are the same'},
-        {name: 'Small Straight', score: null, description: '25 points for a full house'},
-        {name: 'Large Straight', score: null, description: '30 points for a small straight'},
-        {name: 'Full House', score: null, description: '40 points for a large straight'},
+        {name: 'Small Straight', score: null, description: '30 points for a small straight'},
+        {name: 'Large Straight', score: null, description: '40 points for a large straight'},
+        {name: 'Full House', score: null, description: '25 points for a full house'},
         {name: 'YAHTZEE', score: null, description: '50 points for yahtzee'}
       ]
     }
@@ -90,20 +90,24 @@ class Game extends React.Component {
   render() {
     return (
       <div className="game">
-        <h1 className="game__h1">Yahtzee!</h1>
-        <Dice 
-          dice={this.state.dice}
-          rollsLeft={this.state.rollsLeft}
-          rollDice={this.rollDice}
-          toggleDieLock={this.toggleDieLock}
-        />
+        <div className="game__header">
+          <h1 className="game__h1">Yahtzee!</h1>
+          <Dice 
+            dice={this.state.dice}
+            rollsLeft={this.state.rollsLeft}
+            rollDice={this.rollDice}
+            toggleDieLock={this.toggleDieLock}
+          />
+        </div>
         <Scorecard 
           dice={this.state.dice} 
           resetRoll={this.resetRoll} 
           handleScore={this.handleScore}
           scoreItems={this.state.scoreItems}
         />
-        <h2>{`Score: ${this.state.score}`}</h2>
+        <div className="game__score-header">
+          <h2 className="game__score">{`Total Score: ${this.state.score}`}</h2>
+        </div>
       </div>
     )
   }

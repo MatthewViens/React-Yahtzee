@@ -1,12 +1,24 @@
 .die {
-  background-color: #fff;
+  background-color: #000;
   border: 0;
+  padding: 0;
+  display: flex;
+  height: 42px;
+  width: 42px;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 10px 12px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 10px 12px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 10px 12px rgba(0,0,0,0.4);
 }
 
 .die i {
-  font-size: 3rem;
+  font-size: 4.3rem;
+  line-height: 4.3rem;
 }
 
 .die.locked {
-  color: red;
+  opacity: 0.6;
 }

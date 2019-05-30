@@ -28,10 +28,7 @@ class Die extends React.Component {j
         this.props.locked
           ? "die locked"
           : "die"
-        }
-        disabled={
-          !this.props.rollsLeft > 0
-        }>
+      }>
         <i className={
           this.props.value
             ? icons[this.props.value]

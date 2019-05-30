@@ -1,6 +1,31 @@
+.dice {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
 .dice__container {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0 4rem;;
+  padding: 0 4rem;
+  width: 100%;
+}
+
+.dice__roll-button {
+  position: absolute;
+  top: 40px;
+  color: #fff;
+  font-weight: 200;
+  font-size: 20px;
+  padding: 14px 16px;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #9e43fb;
+  -webkit-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.4);
 }

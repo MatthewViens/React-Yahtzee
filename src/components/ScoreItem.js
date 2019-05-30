@@ -19,7 +19,7 @@ class ScoreItem extends React.Component {
       className="score-item"
       disabled={this.props.score !== null}
       >
-        <p>{this.props.name}</p>
+        <p className="score-item--name">{this.props.name}</p>
         <p>{this.props.score !== null ? this.props.score : this.props.description}</p>
       </button>
     )

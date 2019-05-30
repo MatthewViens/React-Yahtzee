@@ -29,7 +29,8 @@ class Dice extends React.Component {
               key={i}
           />))}
         </div>
-        <button
+        <button 
+          className="dice__roll-button"
           disabled={!this.props.rollsLeft > 0}
           onClick={this.handleClick}
         > {this.props.rollsLeft} Rolls Left
