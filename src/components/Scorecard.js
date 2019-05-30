@@ -1,34 +1,33 @@
 import React from 'react';
 import ScoreItem from './ScoreItem';
-import { upperScore } from '../helpers.js';
 
 class Scorecard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      score: 0
-    }
     
-    this.handleUpperScore = this.handleUpperScore.bind(this)
-  }
-    
-  handleUpperScore(value) {
-    const score = upperScore(this.props.dice, value);
-    this.setState(prev => ({score: prev.score + score}))
-    this.props.resetRoll();
-  }
-  
   render() {
-    const upperNames = ['Aces', 'Twos', 'Threes', 'Fours', 'Fives', 'Sixes'];
-    const upperItems = upperNames.map((name, index) => {
-      return <ScoreItem name={name} value={index + 1} handleUpperScore={this.handleUpperScore} />
-    })
     return (
       <div>
-        <h2>Upper</h2>
-          {upperItems}
-        <h2>Lower</h2>
-        <h1>Score: {this.state.score}</h1>
+        {this.props.scoreItems.map((item) => {
+          return <ScoreItem 
+            name={item.name}
+            score={item.score}
+            description={item.description}
+            handleScore={this.props.handleScore} />
+        })}
+        {/*}<h2>Upper Section</h2>
+        <ScoreItem handleScore={this.props.handleScore} name={"Aces"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"Twos"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"Threes"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"Fours"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"Fives"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"Sixes"} />
+        <h2>Lower Section</h2>
+        <ScoreItem handleScore={this.props.handleScore} name={"3 of a kind"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"4 of a kind"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"Full House"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"Small Straight"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"Large Straight"} />
+        <ScoreItem handleScore={this.props.handleScore} name={"YAHTZEE"} />
+      </div>*/}
       </div>
     )
   }

@@ -1,12 +1,11 @@
 .game {
   max-width: 600px;
-  min-height: 100vh;
   background-color: #fff;
 }
 
 .game__h1 {
-  margin: 10px 0;
-  font-size: 4rem;
+  margin: 5px 0;
+  font-size: 3rem;
   text-align: center;
   padding: 10px 130px;
 }

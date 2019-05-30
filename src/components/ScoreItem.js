@@ -1,24 +1,26 @@
 import React from 'react';
+import '../styles/ScoreItem.css'
 
 class ScoreItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      disabled: false
-    }
     
     this.handleClick = this.handleClick.bind(this);
   }
   
   handleClick() {
-    this.props.handleUpperScore(this.props.value);
-    this.setState({disabled: true})
+    this.props.handleScore(this.props.name);
   }
   
   render() {
     return (
-      <button onClick={this.handleClick} disabled={this.state.disabled}>
+      <button 
+      onClick={this.handleClick} 
+      className="score-item"
+      disabled={this.props.score !== null}
+      >
         <p>{this.props.name}</p>
+        <p>{this.props.score !== null ? this.props.score : this.props.description}</p>
       </button>
     )
   }

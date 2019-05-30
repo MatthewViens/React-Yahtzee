@@ -1,7 +1,7 @@
 import React from 'react';
 import Dice from './Dice';
 import Scorecard from './Scorecard';
-import { rolld6 } from '../helpers';
+import { rolld6, scoringFunctions } from '../helpers.js';
 import '../styles/Game.css';
 
 class Game extends React.Component {
@@ -9,12 +9,28 @@ class Game extends React.Component {
     super(props);
     this.state = {
       rollsLeft: 2,
-      dice: Array.from(Array(5)).map(i => ({value: rolld6(), locked: false}))
+      dice: Array.from(Array(5)).map(i => ({value: rolld6(), locked: false})),
+      score: 0,
+      scoreItems: [
+        {name: 'Aces', score: null, description: 'Sum of all Aces'},
+        {name: 'Twos', score: null, description: 'Sum of all Twos'},
+        {name: 'Threes', score: null, description: 'Sum of all Threes'},
+        {name: 'Fours', score: null, description: 'Sum of all Fours'},
+        {name: 'Fives', score: null, description: 'Sum of all Fives'},
+        {name: 'Sixes', score: null, description: 'Sum of all Sixes'},
+        {name: '3 of a kind', score: null, description: 'Sum of all dice if 3 are the same'},
+        {name: '4 of a kind', score: null, description: 'Sum of all dice if 4 are the same'},
+        {name: 'Small Straight', score: null, description: '25 points for a full house'},
+        {name: 'Large Straight', score: null, description: '30 points for a small straight'},
+        {name: 'Full House', score: null, description: '40 points for a large straight'},
+        {name: 'YAHTZEE', score: null, description: '50 points for yahtzee'}
+      ]
     }
     
     this.rollDice = this.rollDice.bind(this);
     this.resetRoll = this.resetRoll.bind(this);
     this.toggleDieLock = this.toggleDieLock.bind(this);
+    this.handleScore = this.handleScore.bind(this);
   }
   
   rollDice() {
@@ -51,6 +67,26 @@ class Game extends React.Component {
     })
   }
   
+  handleScore(name) {
+    const scoreValue = scoringFunctions[name](this.state.dice);
+    let index;
+    for(let i = 0; i < this.state.scoreItems.length; i++) {
+      if(this.state.scoreItems[i].name === name) {
+        index = i;
+        console.log(i);
+      }
+    }
+    let updatedScoreItems = [...this.state.scoreItems];
+    updatedScoreItems[index].score = scoreValue;
+    this.setState((prev) => (
+      {
+        score: prev.score + scoreValue,
+        scoreItems: updatedScoreItems
+      }
+    ))
+    this.resetRoll();
+  }
+  
   render() {
     return (
       <div className="game">
@@ -64,7 +100,10 @@ class Game extends React.Component {
         <Scorecard 
           dice={this.state.dice} 
           resetRoll={this.resetRoll} 
+          handleScore={this.handleScore}
+          scoreItems={this.state.scoreItems}
         />
+        <h2>{`Score: ${this.state.score}`}</h2>
       </div>
     )
   }
