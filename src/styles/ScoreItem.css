@@ -8,6 +8,7 @@
   font-weight: 100;
   padding: 6px;
   border-bottom: 1px solid #000;
+  cursor: pointer;
 }
 
 .score-item:hover {
@@ -17,6 +18,7 @@
 .score-item:disabled {
   color: #000;
   background-color: #f7f7f7;
+  cursor: default;
 }
 
 .score-item:disabled:hover {

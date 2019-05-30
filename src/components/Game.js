@@ -11,6 +11,7 @@ class Game extends React.Component {
       rollsLeft: 2,
       dice: Array.from(Array(5)).map(i => ({value: rolld6(), locked: false})),
       score: 0,
+      upperBonus: false,
       scoreItems: [
         {name: 'Aces', score: null, description: 'Sum of all Aces'},
         {name: 'Twos', score: null, description: 'Sum of all Twos'},
@@ -31,6 +32,7 @@ class Game extends React.Component {
     this.resetRoll = this.resetRoll.bind(this);
     this.toggleDieLock = this.toggleDieLock.bind(this);
     this.handleScore = this.handleScore.bind(this);
+    this.checkUpperBonus = this.checkUpperBonus.bind(this);
   }
   
   rollDice() {
@@ -68,12 +70,11 @@ class Game extends React.Component {
   }
   
   handleScore(name) {
-    const scoreValue = scoringFunctions[name](this.state.dice);
+    let scoreValue = scoringFunctions[name](this.state.dice);
     let index;
     for(let i = 0; i < this.state.scoreItems.length; i++) {
       if(this.state.scoreItems[i].name === name) {
         index = i;
-        console.log(i);
       }
     }
     let updatedScoreItems = [...this.state.scoreItems];
@@ -83,8 +84,26 @@ class Game extends React.Component {
         score: prev.score + scoreValue,
         scoreItems: updatedScoreItems
       }
-    ))
+    ), () => {this.checkUpperBonus()})
     this.resetRoll();
+  }
+  
+  checkUpperBonus() {
+    if(!this.state.upperBonus) {
+      const totalUpper = this.state.scoreItems.slice(0, 6).reduce((total, item) => {
+        console.log(item.score)
+        return item.score ? item.score + total : 0 + total;
+      }, 0);
+      if(totalUpper >= 63) {
+        console.log(true)
+        this.setState((prev) => (
+          {
+            upperBonus: true,
+            score: prev.score + 35
+          }
+        ))
+      }
+    }
   }
   
   render() {
@@ -101,6 +120,7 @@ class Game extends React.Component {
         </div>
         <Scorecard 
           dice={this.state.dice} 
+          upperBonus={this.state.upperBonus}
           resetRoll={this.resetRoll} 
           handleScore={this.handleScore}
           scoreItems={this.state.scoreItems}

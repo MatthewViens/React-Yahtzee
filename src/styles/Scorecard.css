@@ -15,6 +15,23 @@
   border-bottom: 2px solid #8a3bd3;
 }
 
+.scorecard__bonus-score {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  background-color: #f7f7f7;
+  font-size: 16px;
+  font-weight: 100;
+  padding: 6px;
+  border-bottom: 1px solid #000;
+  cursor: default;
+}
+
+.scorecard__bonus-score p {
+  margin: 0;
+}
+
 @media only screen and (max-width: 375px) {
   .scorecard {
     padding: 0;

@@ -7,6 +7,7 @@
   -moz-text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
   text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
   font-size: 4.3rem;
+  transition: opacity .2s;
 }
 
 .die.locked {
