@@ -23,19 +23,12 @@ class Die extends React.Component {j
       'fas fa-dice-five',
       'fas fa-dice-six'
     ];
+    
+    const locked = this.props.locked ? 'locked' : '';
+    const value = this.props.value ? icons[this.props.value] : icons[rolld6()]
     return (
-      <button className={
-        this.props.locked
-          ? "die locked"
-          : "die"
-      }>
-        <i className={
-          this.props.value
-            ? icons[this.props.value]
-            : icons[rolld6()]
-          }
+        <i className={`die ${locked} ${value}`}
           onClick={this.handleClick}></i>
-      </button>
     )
   }
 }

@@ -6,17 +6,20 @@
   padding-bottom: 60px;
 }
 
+.dice button {
+  margin: 0 15px;
+}
+
 .dice__container {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0 4rem;
-  width: 100%;
+  width: 70%;
 }
 
 .dice__roll-button {
   position: absolute;
-  top: 40px;
+  top: 100px;
   color: #fff;
   font-weight: 200;
   font-size: 20px;
@@ -28,4 +31,10 @@
   -webkit-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.4);
   -moz-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.4);
   box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.4);
+}
+
+@media only screen and (max-width: 375px) {
+  .dice__container {
+    width: 100%
+  }
 }
