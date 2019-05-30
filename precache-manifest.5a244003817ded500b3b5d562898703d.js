@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3bb406453c6ec65832c3d50a402f68a3",
+    "revision": "394ee0ef9ab295cda5d5948a4104f011",
     "url": "/React-Yahtzee/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-Yahtzee/static/css/2.764ccc25.chunk.css"
   },
   {
-    "revision": "e62cad6ed16bde71eceb",
-    "url": "/React-Yahtzee/static/css/main.52908c37.chunk.css"
+    "revision": "89877442e1fd4a305065",
+    "url": "/React-Yahtzee/static/css/main.e535eec3.chunk.css"
   },
   {
     "revision": "b628a492c2e932912c21",
     "url": "/React-Yahtzee/static/js/2.0212eb43.chunk.js"
   },
   {
-    "revision": "e62cad6ed16bde71eceb",
+    "revision": "89877442e1fd4a305065",
     "url": "/React-Yahtzee/static/js/main.b6e73401.chunk.js"
   },
   {

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/React-Yahtzee/static/css/main.52908c37.chunk.css",
+    "main.css": "/React-Yahtzee/static/css/main.e535eec3.chunk.css",
     "main.js": "/React-Yahtzee/static/js/main.b6e73401.chunk.js",
     "main.js.map": "/React-Yahtzee/static/js/main.b6e73401.chunk.js.map",
     "runtime~main.js": "/React-Yahtzee/static/js/runtime~main.d5ee2dfc.js",
@@ -9,9 +9,9 @@
     "static/js/2.0212eb43.chunk.js": "/React-Yahtzee/static/js/2.0212eb43.chunk.js",
     "static/js/2.0212eb43.chunk.js.map": "/React-Yahtzee/static/js/2.0212eb43.chunk.js.map",
     "index.html": "/React-Yahtzee/index.html",
-    "precache-manifest.85ee9bf0dd64d321f26dc4e5cd5e775f.js": "/React-Yahtzee/precache-manifest.85ee9bf0dd64d321f26dc4e5cd5e775f.js",
+    "precache-manifest.5a244003817ded500b3b5d562898703d.js": "/React-Yahtzee/precache-manifest.5a244003817ded500b3b5d562898703d.js",
     "service-worker.js": "/React-Yahtzee/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/React-Yahtzee/static/css/2.764ccc25.chunk.css.map",
-    "static/css/main.52908c37.chunk.css.map": "/React-Yahtzee/static/css/main.52908c37.chunk.css.map"
+    "static/css/main.e535eec3.chunk.css.map": "/React-Yahtzee/static/css/main.e535eec3.chunk.css.map"
   }
 }
