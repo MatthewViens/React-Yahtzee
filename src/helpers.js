@@ -91,4 +91,8 @@ scoringFunctions['YAHTZEE'] = (dice) => {
   return 50;
 }
 
+scoringFunctions['Chance'] = (dice) => {
+  return dice.reduce((total, die) => (total + die.value), 0)
+}
+
 export { rolld6, scoringFunctions }

@@ -17,8 +17,28 @@
   padding: 5px;
 }
 
-.game__h1 {
+.game__title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   color: #fff;
+}
+
+.game__title a {
+  font-size: 20px;
+  margin: 5px;
+  color: #fff;
+}
+
+.game__title a:visited {
+  color: #fff;
+}
+
+.game__title a:hover {
+  color: #6a3093;
+}
+
+.game__h1 {
   margin: 5px 0;
   font-size: 4rem;
   text-align: center;

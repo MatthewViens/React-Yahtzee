@@ -2,7 +2,7 @@
   "name": "yahtzee",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://MatthewViens.github.io/React-Yahtzee",
+  "homepage": "https://MatthewViens.github.io/React-Yahtzee",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "normalize.css": "^8.0.1",

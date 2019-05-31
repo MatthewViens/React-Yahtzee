@@ -7,6 +7,7 @@ class Scorecard extends React.Component {
   render() {
     return (
       <div className="scorecard">
+      {this.props.yahtzeeStatus && <h1>Has a Yahtzee</h1>}
         <div className="scorecard__header">
           <h2>Upper Section</h2>
         </div>
@@ -31,7 +32,7 @@ class Scorecard extends React.Component {
         <div className="scorecard__header">
           <h2>Lower Section</h2>
         </div>
-        {this.props.scoreItems.slice(6, 12).map((item) => {
+        {this.props.scoreItems.slice(6, 13).map((item) => {
           return <ScoreItem 
             key={item.name}
             name={item.name}
