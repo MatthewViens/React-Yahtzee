@@ -19,7 +19,7 @@ class Scorecard extends React.Component {
             handleScore={this.props.handleScore} />
         })}
         <div className="scorecard__bonus-score">
-          <p>{this.props.upperBonus}</p>
+          <p>Upper Bonus</p>
           <p>{this.props.upperBonus
             ? 35
             : "Score at least 63 in upper section"

@@ -31,7 +31,10 @@ class Dice extends React.Component {
           />))}
         </div>
         <button 
-          className="dice__roll-button"
+          className={this.props.rollsLeft % 2
+          ? "dice__roll-button safariHack"
+          : "dice__roll-button"
+          }
           disabled={!this.props.rollsLeft > 0}
           onClick={this.handleClick}
         > {this.props.rollsLeft} Rolls Left
