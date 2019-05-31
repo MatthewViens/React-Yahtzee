@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a566c9fed6ea1739d50774c2eed5957e",
+    "revision": "4f47590b32927829e1cd1e4d6f82de25",
     "url": "/React-Yahtzee/index.html"
   },
   {
