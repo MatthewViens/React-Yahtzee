@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/React-Yahtzee/precache-manifest.16382ffc55ccc5ecfcf61cf5ea5f57b2.js"
+  "/React-Yahtzee/precache-manifest.9bf7c30c84f493c023cf3eac8f802f98.js"
 );
 
 self.addEventListener('message', (event) => {
