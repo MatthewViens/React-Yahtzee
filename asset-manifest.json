@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/React-Yahtzee/static/css/main.02bd9633.chunk.css",
-    "main.js": "/React-Yahtzee/static/js/main.9d42dc9a.chunk.js",
-    "main.js.map": "/React-Yahtzee/static/js/main.9d42dc9a.chunk.js.map",
+    "main.css": "/React-Yahtzee/static/css/main.31bcd149.chunk.css",
+    "main.js": "/React-Yahtzee/static/js/main.ba8828d6.chunk.js",
+    "main.js.map": "/React-Yahtzee/static/js/main.ba8828d6.chunk.js.map",
     "runtime~main.js": "/React-Yahtzee/static/js/runtime~main.d5ee2dfc.js",
     "runtime~main.js.map": "/React-Yahtzee/static/js/runtime~main.d5ee2dfc.js.map",
     "static/css/2.764ccc25.chunk.css": "/React-Yahtzee/static/css/2.764ccc25.chunk.css",
     "static/js/2.0212eb43.chunk.js": "/React-Yahtzee/static/js/2.0212eb43.chunk.js",
     "static/js/2.0212eb43.chunk.js.map": "/React-Yahtzee/static/js/2.0212eb43.chunk.js.map",
     "index.html": "/React-Yahtzee/index.html",
-    "precache-manifest.9bf7c30c84f493c023cf3eac8f802f98.js": "/React-Yahtzee/precache-manifest.9bf7c30c84f493c023cf3eac8f802f98.js",
+    "precache-manifest.3294cc007613fd40077df86204ec7408.js": "/React-Yahtzee/precache-manifest.3294cc007613fd40077df86204ec7408.js",
     "service-worker.js": "/React-Yahtzee/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/React-Yahtzee/static/css/2.764ccc25.chunk.css.map",
-    "static/css/main.02bd9633.chunk.css.map": "/React-Yahtzee/static/css/main.02bd9633.chunk.css.map"
+    "static/css/main.31bcd149.chunk.css.map": "/React-Yahtzee/static/css/main.31bcd149.chunk.css.map"
   }
 }
