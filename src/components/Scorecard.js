@@ -7,7 +7,6 @@ class Scorecard extends React.Component {
   render() {
     return (
       <div className="scorecard">
-      {this.props.yahtzeeStatus && <h1>Has a Yahtzee</h1>}
         <div className="scorecard__header">
           <h2>Upper Section</h2>
         </div>
@@ -20,10 +19,7 @@ class Scorecard extends React.Component {
             handleScore={this.props.handleScore} />
         })}
         <div className="scorecard__bonus-score">
-          <p>{this.props.upperBonus
-              ? <span>Upper Bonus <i class="fas fa-check"></i></span>
-              : 'Upper Bonus'
-          }</p>
+          <p>{this.props.upperBonus}</p>
           <p>{this.props.upperBonus
             ? 35
             : "Score at least 63 in upper section"
@@ -40,6 +36,13 @@ class Scorecard extends React.Component {
             description={item.description}
             handleScore={this.props.handleScore} />
         })}
+        <div className="scorecard__bonus-score">
+          <p>Yahtzee Bonus</p>
+          <p>{this.props.yahtzeeBonus > 1
+            ? (this.props.yahtzeeBonus - 1) * 100
+            : "Bonus for subsequent Yahtzees"
+          }</p>
+        </div>
       </div>
     )
   }

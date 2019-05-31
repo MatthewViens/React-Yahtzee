@@ -21,6 +21,7 @@ class Dice extends React.Component {
         <div className="dice__container">
           {this.props.dice.map((die, i) => (
             <Die 
+              yahtzeeMode={this.props.yahtzeeMode}
               value={die.value} 
               locked={die.locked}
               rollsLeft={this.props.rollsLeft}

@@ -26,8 +26,9 @@ class Die extends React.Component {j
     
     const locked = this.props.locked ? 'locked' : '';
     const value = this.props.value ? icons[this.props.value] : icons[rolld6()]
+    const yahtzeeMode = this.props.yahtzeeMode ? 'yahtzee-mode': '';
     return (
-        <i className={`die ${locked} ${value}`}
+        <i className={`die ${locked} ${value} ${yahtzeeMode}`}
           onClick={this.handleClick}></i>
     )
   }

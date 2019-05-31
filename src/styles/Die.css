@@ -7,9 +7,15 @@
   -moz-text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
   text-shadow: 0px 0px 20px rgba(0,0,0,0.5);
   font-size: 4.3rem;
-  transition: opacity .2s;
+  transition: all .2s;
 }
 
 .die.locked {
   opacity: 0.6;
+}
+
+.die.yahtzee-mode {
+  -webkit-text-shadow: 0px 0px 20px rgba(251, 255, 50, 0.5);
+  -moz-text-shadow: 0px 0px 20px rgba(251, 255, 50, 0.5);
+  text-shadow: 0px 0px 20px rgba(251, 255, 50, 0.5);
 }

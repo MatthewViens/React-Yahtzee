@@ -12,7 +12,8 @@ class Game extends React.Component {
       dice: Array.from(Array(5)).map(i => ({value: rolld6(), locked: false})),
       score: 0,
       upperBonus: false,
-      hasYahtzee: false,
+      yahtzeeBonus: 0,
+      yahtzeeMode: false,
       scoreItems: [
         {name: 'Aces', score: null, description: 'Sum of all Aces'},
         {name: 'Twos', score: null, description: 'Sum of all Twos'},
@@ -37,6 +38,7 @@ class Game extends React.Component {
     this.updateBonus = this.updateBonus.bind(this);
     this.checkUpperBonus = this.checkUpperBonus.bind(this);
     this.updateYahtzeeState = this.updateYahtzeeState.bind(this);
+    this.isYahtzee = this.isYahtzee.bind(this);
   }
   
   rollDice() {
@@ -47,7 +49,7 @@ class Game extends React.Component {
       {
         rollsLeft: prev.rollsLeft - 1,
         dice: newDice
-      }));
+      }), () => this.isYahtzee());
   }
   
   resetRoll() {
@@ -55,7 +57,7 @@ class Game extends React.Component {
       {
         dice: Array.from(Array(5)).map(i => ({value: rolld6(), locked: false})),
         rollsLeft: 2
-      }
+      }, () => this.isYahtzee()
     )
   }
   
@@ -73,8 +75,18 @@ class Game extends React.Component {
     })
   }
   
+  isYahtzee() {
+    let yahtzeeDice;
+    for(let i = 0; i < this.state.dice.length - 1; i++) {
+      if (this.state.dice[i].value !== this.state.dice[i + 1].value) {
+        return this.setState({yahtzeeMode: false})
+      }
+    }
+    if(this.state.yahtzeeBonus) this.setState({yahtzeeMode: true})
+  }
+  
   handleScore(name) {
-    let scoreValue = scoringFunctions[name](this.state.dice);
+    let scoreValue = scoringFunctions[name](this.state.dice, this.state.yahtzeeMode);
     let index;
     let yahtzeeIndex;
     for(let i = 0; i < this.state.scoreItems.length; i++) {
@@ -98,9 +110,16 @@ class Game extends React.Component {
   
   updateBonus(yahtzeeIndex) {
     if(!this.state.upperBonus) this.checkUpperBonus();
-    if(!this.state.hasYahtzee) this.updateYahtzeeState(yahtzeeIndex);
+    if(!this.state.yahtzeeBonus) {
+      this.updateYahtzeeState(yahtzeeIndex);
+    } else if(this.state.yahtzeeMode) {
+      this.setState((prev) => (
+        {
+          score: prev.score + 100,
+          yahtzeeBonus: prev.yahtzeeBonus + 1 
+      }))
+    }
   }
-  
   
   checkUpperBonus() {
     const totalUpper = this.state.scoreItems.slice(0, 6).reduce((total, item) => {
@@ -118,7 +137,7 @@ class Game extends React.Component {
   
   updateYahtzeeState(yahtzeeIndex) {
     if(this.state.scoreItems[yahtzeeIndex].score) {
-      this.setState({hasYahtzee: true})
+      this.setState((prev) => ({yahtzeeBonus: prev.yahtzeeBonus + 1}))
     }
   }
   
@@ -140,12 +159,13 @@ class Game extends React.Component {
             rollsLeft={this.state.rollsLeft}
             rollDice={this.rollDice}
             toggleDieLock={this.toggleDieLock}
+            yahtzeeMode={this.state.yahtzeeMode}
           />
         </div>
         <Scorecard 
           dice={this.state.dice} 
           upperBonus={this.state.upperBonus}
-          yahtzeeStatus={this.state.hasYahtzee}
+          yahtzeeBonus={this.state.yahtzeeBonus}
           resetRoll={this.resetRoll} 
           handleScore={this.handleScore}
           scoreItems={this.state.scoreItems}
