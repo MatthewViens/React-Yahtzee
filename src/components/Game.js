@@ -15,7 +15,7 @@ class Game extends React.Component {
       yahtzeeBonus: 0,
       yahtzeeMode: false,
       scoreItems: [
-        {name: 'Aces', score: null, description: 'Sum of all Aces'},
+        {name: 'Ones', score: null, description: 'Sum of all Ones'},
         {name: 'Twos', score: null, description: 'Sum of all Twos'},
         {name: 'Threes', score: null, description: 'Sum of all Threes'},
         {name: 'Fours', score: null, description: 'Sum of all Fours'},

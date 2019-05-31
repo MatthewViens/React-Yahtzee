@@ -1,3 +1,10 @@
+# React Yahtzee
+
+A game of Yahtzee built in React. Click on dice to set aside/lock in place. 
+Clicking on any scoring category will use the current dice and verify score.
+Yahtzee rolls after the first can be used as a "Joker" for any other category.
+[View Live](https://MatthewViens.github.io/React-Yahtzee).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

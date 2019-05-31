@@ -2,7 +2,7 @@ const rolld6 = () => Math.floor(Math.random() * 6 + 1);
 
 const scoringFunctions = {};
 
-scoringFunctions['Aces'] = (dice) => (
+scoringFunctions['Ones'] = (dice) => (
   dice.reduce((total, die) => die.value === 1 ? total + die.value : total, 0)
 )
 
